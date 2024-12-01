@@ -37,6 +37,17 @@
         z-index: 1;  /* Added to bring image to front */
         position: relative; 
         border-radius: 50%;
+        display: none;
     }
+
+    #plak.loaded {
+        display: block;
+    }
+
 </style>
+<script>
+    document.getElementById('plak').onload = function() {
+        this.classList.add('loaded');
+    };
+</script>
 </html> 
