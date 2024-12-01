@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plak</title>
+    <title>Stella ❤ ️ ️Arinmis</title>
+    <link rel="icon" href="plak.png">
 </head>
-<body style="background-color: #FFAA1A; display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <img src="plak.png" alt="Plak" style="width: 60%; animation: rotate 4s linear infinite;">
+<body>
+    <img src="plak.png" alt="Plak" id="plak">
 </body>
 <style>
     @keyframes rotate {
@@ -16,6 +17,26 @@
         to {
             transform: rotate(-360deg);
         }
+    }
+
+    body {
+        background-color: black; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #plak {
+        width: 80%; 
+        height: 80%; 
+        object-fit: contain; 
+        animation: rotate 20s linear infinite; 
+        z-index: 1;  /* Added to bring image to front */
+        position: relative; 
+        border-radius: 50%;
     }
 </style>
 </html> 
