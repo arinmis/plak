@@ -8,6 +8,8 @@
 </head>
 <body>
     <img src="plak.png" alt="Plak" id="plak">
+    <audio id="myAudio" autoplay="autoplay" loop="loop" src="muzik_kutusu.mp3"></audio>
+    <button id="playButton">🎶</button>
 </body>
 <style>
     @keyframes rotate {
@@ -40,6 +42,20 @@
         display: none;
     }
 
+    #playButton {
+        padding: 10px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 2;
+        font-size: 1.5rem;
+        top: 3rem;
+        right: 3rem;
+        background-color: white;
+        color: white;
+    }
+
     #plak.loaded {
         display: block;
     }
@@ -49,5 +65,11 @@
     document.getElementById('plak').onload = function() {
         this.classList.add('loaded');
     };
+    document.addEventListener('click', function() {
+        const audio = document.getElementById('myAudio');
+        audio.play().catch(function(error) {
+            console.log("Audio play failed:", error);
+        });
+    }, { once: true });
 </script>
 </html> 
