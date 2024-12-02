@@ -1,10 +1,10 @@
 const CACHE_NAME = 'stella-arinmis-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/plak.png',
-    '/muzik_kutusu.mp3',
-    '/manifest.json'
+    '/plak',
+    '/plak/index.html',
+    '/plak/plak.png',
+    '/plak/muzik_kutusu.mp3',
+    '/plak/manifest.json'
 ];
 
 self.addEventListener('install', event => {
