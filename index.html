@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stella ❤ Arinmis</title>
     <link rel="icon" href="plak.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="apple-touch-icon" href="plak.png">
+    <script src="sw.js"></script>
 </head>
 <body onclick="playAudio()">
     <img src="plak.png" alt="Plak" id="plak">
@@ -54,6 +61,17 @@
         const audio = document.getElementById('myAudio');
         audio.play().catch(function(error) {
             console.log("Audio play failed:", error);
+        });
+    }
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('ServiceWorker registration successful');
+                })
+                .catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
         });
     }
 </script>
